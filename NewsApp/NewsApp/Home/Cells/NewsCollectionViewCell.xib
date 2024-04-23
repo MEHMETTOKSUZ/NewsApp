@@ -50,22 +50,34 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="895-Bv-1t5">
-                                        <rect key="frame" x="0.0" y="144" width="197" height="136"/>
+                                        <rect key="frame" x="0.0" y="144" width="197" height="116.66666666666669"/>
                                         <color key="backgroundColor" red="0.018918571820000001" green="0.02697424616" blue="0.1121998026" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="highlightedColor" red="0.018918571820000001" green="0.02697424616" blue="0.1121998026" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLg-1w-Xp6">
+                                        <rect key="frame" x="0.0" y="268.66666666666669" width="197" height="11.333333333333314"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="895-Bv-1t5" secondAttribute="trailing" id="07r-GM-TRV"/>
+                                    <constraint firstItem="FLg-1w-Xp6" firstAttribute="leading" secondItem="Dqk-i0-Qio" secondAttribute="leading" id="2JJ-By-nR0"/>
+                                    <constraint firstItem="895-Bv-1t5" firstAttribute="leading" secondItem="Dqk-i0-Qio" secondAttribute="leading" id="4af-Ql-Rcx"/>
+                                    <constraint firstItem="895-Bv-1t5" firstAttribute="leading" secondItem="Dqk-i0-Qio" secondAttribute="leading" id="5yY-VE-LGS"/>
                                     <constraint firstAttribute="trailing" secondItem="cmn-Vx-1MB" secondAttribute="trailing" id="7T7-uD-sVY"/>
-                                    <constraint firstItem="895-Bv-1t5" firstAttribute="leading" secondItem="Dqk-i0-Qio" secondAttribute="leading" id="S8p-cR-bxK"/>
+                                    <constraint firstAttribute="trailing" secondItem="895-Bv-1t5" secondAttribute="trailing" id="9HY-fV-VgP"/>
+                                    <constraint firstItem="FLg-1w-Xp6" firstAttribute="top" secondItem="895-Bv-1t5" secondAttribute="bottom" constant="8" symbolic="YES" id="L5e-Dd-7wQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="FLg-1w-Xp6" secondAttribute="trailing" id="OZl-yu-MTI"/>
+                                    <constraint firstItem="895-Bv-1t5" firstAttribute="top" secondItem="cmn-Vx-1MB" secondAttribute="bottom" constant="8" symbolic="YES" id="R2q-Y5-xFc"/>
                                     <constraint firstItem="cmn-Vx-1MB" firstAttribute="top" secondItem="Dqk-i0-Qio" secondAttribute="top" id="bLN-QJ-vM3"/>
-                                    <constraint firstItem="895-Bv-1t5" firstAttribute="top" secondItem="cmn-Vx-1MB" secondAttribute="bottom" constant="8" symbolic="YES" id="cb4-jv-8zY"/>
+                                    <constraint firstItem="895-Bv-1t5" firstAttribute="top" secondItem="cmn-Vx-1MB" secondAttribute="bottom" constant="8" symbolic="YES" id="enC-We-yNs"/>
                                     <constraint firstItem="cmn-Vx-1MB" firstAttribute="leading" secondItem="Dqk-i0-Qio" secondAttribute="leading" id="hcX-dA-961"/>
-                                    <constraint firstItem="895-Bv-1t5" firstAttribute="top" secondItem="cmn-Vx-1MB" secondAttribute="bottom" constant="8" symbolic="YES" id="k97-YC-MtI"/>
-                                    <constraint firstAttribute="bottom" secondItem="895-Bv-1t5" secondAttribute="bottom" id="qs9-pE-82l"/>
+                                    <constraint firstAttribute="bottom" secondItem="FLg-1w-Xp6" secondAttribute="bottom" id="n01-Wu-unb"/>
+                                    <constraint firstAttribute="trailing" secondItem="895-Bv-1t5" secondAttribute="trailing" id="vv8-cT-wZT"/>
+                                    <constraint firstItem="FLg-1w-Xp6" firstAttribute="top" secondItem="895-Bv-1t5" secondAttribute="bottom" constant="8" symbolic="YES" id="xHG-Jc-6bk"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -99,6 +111,7 @@
             <connections>
                 <outlet property="favoriteButton" destination="cVP-BB-EBL" id="elT-Hi-GuM"/>
                 <outlet property="newsImageView" destination="cmn-Vx-1MB" id="Cl9-tG-Zgy"/>
+                <outlet property="newsTimeLabel" destination="FLg-1w-Xp6" id="Vr5-nZ-G8f"/>
                 <outlet property="newsTitleLabel" destination="895-Bv-1t5" id="4xq-KN-alk"/>
             </connections>
             <point key="canvasLocation" x="74.045801526717554" y="59.859154929577471"/>

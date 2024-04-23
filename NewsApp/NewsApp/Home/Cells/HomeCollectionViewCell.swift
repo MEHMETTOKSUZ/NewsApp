@@ -7,6 +7,8 @@
 
 import UIKit
 
+import UIKit
+
 class HomeCollectionViewCell: UICollectionViewCell {
     
     struct ViewModel {
@@ -21,6 +23,23 @@ class HomeCollectionViewCell: UICollectionViewCell {
         
         var isFavorite: Bool {
             FavoriteManager.shared.isFavorite(item: data)
+        }
+        
+        var formattedPublishedAt: String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+            guard let date = dateFormatter.date(from: publishedAt) else {
+                return publishedAt
+            }
+            
+            let now = Date()
+            let difference = Calendar.current.dateComponents([.minute], from: date, to: now)
+            
+            if let minutes = difference.minute, minutes > 0 {
+                return "\(minutes) dakika önce"
+            } else {
+                return "Şimdi"
+            }
         }
     }
 }

@@ -9,6 +9,7 @@ import UIKit
 
 class NewsCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var newsTimeLabel: UILabel!
     @IBOutlet weak var newsTitleLabel: UILabel!
     @IBOutlet weak var newsImageView: UIImageView!
     @IBOutlet weak var favoriteButton: UIButton!
@@ -26,6 +27,7 @@ class NewsCollectionViewCell: UICollectionViewCell {
             self.newsImageView.downloaded(from: image, contentMode: .scaleToFill)
         }
         self.newsTitleLabel.text = item.title
+        self.newsTimeLabel.text = item.formattedPublishedAt
         let imageName : String = item.isFavorite ? "bookmark.fill": "bookmark"
         self.favoriteButton.setImage(UIImage(systemName: imageName), for: .normal)
         
