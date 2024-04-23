@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewsCollectionViewCell" id="gTV-IL-0wX" customClass="NewsCollectionViewCell" customModule="NewsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="197" height="314"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="197" height="314"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YPH-NF-3Rh">
+                        <rect key="frame" x="0.0" y="0.0" width="197" height="314"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6Xr-Hu-g9R">
+                                <rect key="frame" x="157" y="0.0" width="40" height="34.333333333333336"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVP-BB-EBL">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="bookmark" catalog="system">
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="favoriteButtonClicked:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Bqs-lQ-Ytq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dqk-i0-Qio">
+                                <rect key="frame" x="0.0" y="34" width="197" height="280"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cmn-Vx-1MB">
+                                        <rect key="frame" x="0.0" y="0.0" width="197" height="136"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="197" id="Qi3-xf-dYC"/>
+                                            <constraint firstAttribute="height" constant="136" id="pOf-wl-vkZ"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="895-Bv-1t5">
+                                        <rect key="frame" x="0.0" y="144" width="197" height="136"/>
+                                        <color key="backgroundColor" red="0.018918571820000001" green="0.02697424616" blue="0.1121998026" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="highlightedColor" red="0.018918571820000001" green="0.02697424616" blue="0.1121998026" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="895-Bv-1t5" secondAttribute="trailing" id="07r-GM-TRV"/>
+                                    <constraint firstAttribute="trailing" secondItem="cmn-Vx-1MB" secondAttribute="trailing" id="7T7-uD-sVY"/>
+                                    <constraint firstItem="895-Bv-1t5" firstAttribute="leading" secondItem="Dqk-i0-Qio" secondAttribute="leading" id="S8p-cR-bxK"/>
+                                    <constraint firstItem="cmn-Vx-1MB" firstAttribute="top" secondItem="Dqk-i0-Qio" secondAttribute="top" id="bLN-QJ-vM3"/>
+                                    <constraint firstItem="895-Bv-1t5" firstAttribute="top" secondItem="cmn-Vx-1MB" secondAttribute="bottom" constant="8" symbolic="YES" id="cb4-jv-8zY"/>
+                                    <constraint firstItem="cmn-Vx-1MB" firstAttribute="leading" secondItem="Dqk-i0-Qio" secondAttribute="leading" id="hcX-dA-961"/>
+                                    <constraint firstItem="895-Bv-1t5" firstAttribute="top" secondItem="cmn-Vx-1MB" secondAttribute="bottom" constant="8" symbolic="YES" id="k97-YC-MtI"/>
+                                    <constraint firstAttribute="bottom" secondItem="895-Bv-1t5" secondAttribute="bottom" id="qs9-pE-82l"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.018918571820000001" green="0.02697424616" blue="0.1121998026" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Xr-Hu-g9R" firstAttribute="leading" secondItem="YPH-NF-3Rh" secondAttribute="leading" constant="157" id="CWX-1G-Ah9"/>
+                            <constraint firstAttribute="trailing" secondItem="Dqk-i0-Qio" secondAttribute="trailing" id="Izp-R3-a9O"/>
+                            <constraint firstItem="6Xr-Hu-g9R" firstAttribute="top" secondItem="YPH-NF-3Rh" secondAttribute="top" id="N27-QT-K1e"/>
+                            <constraint firstAttribute="trailing" secondItem="6Xr-Hu-g9R" secondAttribute="trailing" id="TVN-ld-ehn"/>
+                            <constraint firstItem="Dqk-i0-Qio" firstAttribute="leading" secondItem="YPH-NF-3Rh" secondAttribute="leading" id="gQC-be-Ftt"/>
+                            <constraint firstAttribute="bottom" secondItem="Dqk-i0-Qio" secondAttribute="bottom" id="l3i-nX-F39"/>
+                            <constraint firstAttribute="bottom" secondItem="6Xr-Hu-g9R" secondAttribute="bottom" constant="279.67000000000002" id="quH-6u-HVf"/>
+                            <constraint firstItem="Dqk-i0-Qio" firstAttribute="top" secondItem="YPH-NF-3Rh" secondAttribute="top" constant="34" id="wGd-75-uPg"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="YPH-NF-3Rh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="3u0-WC-1Hq"/>
+                <constraint firstAttribute="bottom" secondItem="YPH-NF-3Rh" secondAttribute="bottom" id="EBn-l7-Sqb"/>
+                <constraint firstAttribute="trailing" secondItem="YPH-NF-3Rh" secondAttribute="trailing" id="R62-fw-NTZ"/>
+                <constraint firstItem="YPH-NF-3Rh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="lS0-m5-ooI"/>
+            </constraints>
+            <size key="customSize" width="197" height="314"/>
+            <connections>
+                <outlet property="favoriteButton" destination="cVP-BB-EBL" id="elT-Hi-GuM"/>
+                <outlet property="newsImageView" destination="cmn-Vx-1MB" id="Cl9-tG-Zgy"/>
+                <outlet property="newsTitleLabel" destination="895-Bv-1t5" id="4xq-KN-alk"/>
+            </connections>
+            <point key="canvasLocation" x="74.045801526717554" y="59.859154929577471"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="bookmark" catalog="system" width="110" height="128"/>
+    </resources>
+</document>
