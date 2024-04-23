@@ -119,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				109841682BD7E3DB00BC61EB /* APIKEY.swift */,
+				1095E1882BD8304E000D8A50 /* GoogleInfo */,
 			);
 			path = Locale;
 			sourceTree = "<group>";
@@ -150,7 +151,6 @@
 				10A69BE12BCEE694009C219F /* Services */,
 				10A69BDC2BCEE5A4009C219F /* Delegate */,
 				109841672BD7E3B500BC61EB /* Locale */,
-				1095E1882BD8304E000D8A50 /* GoogleInfo */,
 				109BAEFD2BBF159700D23996 /* Assets.xcassets */,
 				109BAEFA2BBF159500D23996 /* Main.storyboard */,
 				109BAEFF2BBF159700D23996 /* LaunchScreen.storyboard */,
