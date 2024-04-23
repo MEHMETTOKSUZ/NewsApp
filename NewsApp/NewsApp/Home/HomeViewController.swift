@@ -7,6 +7,8 @@
 
 import UIKit
 import SafariServices
+import Firebase
+import FirebaseStorage
 
 class HomeViewController: UIViewController {
     
@@ -14,10 +16,14 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
     
     let menuItems = ["Top Head Lines", "Finance", "Featured", "Science", "Sports", "Gaming", "Technology", "Politics", "Fashion", "Cinema", "Arts"]
     let viewModel = ViewModel()
     var viewOpen: Bool = true
+    private let firestore = Firestore.firestore()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +35,7 @@ class HomeViewController: UIViewController {
         tableView.separatorStyle = .none
         registerTableCells()
         registerCollectionCells()
+        fetchUserInfo()
         viewModel.didFinishLoad = {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
@@ -84,9 +91,38 @@ class HomeViewController: UIViewController {
         viewOpen = !viewOpen
     }
     
+    private func fetchUserInfo() {
+        guard let currentUserEmail = Auth.auth().currentUser?.email else { return }
+        
+        firestore.collection("UserInfo").whereField("email", isEqualTo: currentUserEmail).getDocuments { snapshot, error in
+            guard let documents = snapshot?.documents, !documents.isEmpty else {
+                print("Error fetching user info: \(error?.localizedDescription ?? "Unknown error")")
+                return
+            }
+            
+            if let userInfo = documents.first?.data() {
+                DispatchQueue.main.async {
+                    self.emailLabel.text = currentUserEmail
+                    self.usernameLabel.text = userInfo["userName"] as? String
+                }
+            }
+        }
+    }
+    
     @IBAction func bookMarkButtonClicked(_ sender: Any) {
         performSegue(withIdentifier: "toFavoriteFromHome", sender: nil)
     }
+    
+    @IBAction func logOutButtonClicked(_ sender: Any) {
+        
+        do {
+            try Auth.auth().signOut()
+            self.performSegue(withIdentifier: "toLogInScreenFromSettings", sender: nil)
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+    
 }
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
