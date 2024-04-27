@@ -18,7 +18,6 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
         passwordText.isSecureTextEntry = true
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(gestureRecognizer)
@@ -29,15 +28,12 @@ class SignInViewController: UIViewController {
         view.endEditing(true)
     }
     
-    
     @IBAction func logInButtonClicked(_ sender: Any) {
-        
         logIn()
         
     }
     
     @IBAction func signInButtonClicked(_ sender: Any) {
-        
         signIn()
         
     }
