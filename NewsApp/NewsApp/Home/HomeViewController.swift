@@ -50,6 +50,10 @@ class HomeViewController: UIViewController {
         
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(false)
+    }
+    
     func registerCollectionCells() {
         
         let nibName = UINib(nibName: "NewsCollectionViewCell", bundle: nil)
